@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class SimplePublisher<T> implements Publisher<T> {
 
-    Set<Channel> channels = new HashSet<Channel>();
+    Set<Channel> channels = new HashSet<>();
     @Override
     public void publish(Message<T> message) {
         for (Channel channel : channels) {
