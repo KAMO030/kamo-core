@@ -19,7 +19,7 @@ public interface Subscriber<T> {
 
 
     void accept( Message<T> message);
-    static <T> Subscriber<T> ofTitle(String title,Consumer<Message<T>> msgConsumer){
+    static <T> Subscriber<T> byTitle(String title, Consumer<Message<T>> msgConsumer){
         return new TitleSubscriber<>(title,msgConsumer);
     }
 

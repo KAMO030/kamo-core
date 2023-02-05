@@ -12,6 +12,7 @@ public class MessageTest {
         annotationExample();
     }
 
+
     private static void annotationExample() {
         AnnotationParser parser = new AnnotationParser();
         Channel blibili = new Channel("bilibili");
@@ -47,10 +48,10 @@ public class MessageTest {
 //        blibili.addSubscriber(subscriber1);
 //        nicocnico.addSubscriber(subscriber2);
 //        simplePublisher.publish(Message.of("hello", "word"));
-        nicocnico.subFrom(Subscriber.<Student>ofTitle("hello",
+        nicocnico.subFrom(Subscriber.<Student>byTitle("hello",
                 (m) -> System.out.println(m.getContent().getClassName())));
         blibili.subFrom(
-                Subscriber.<Student>ofTitle("hello",
+                Subscriber.<Student>byTitle("hello",
                         (m) -> System.out.println(m.getContent())));
         Publisher.DEFAULT_PUBLISHER
                 .register(nicocnico,blibili)
